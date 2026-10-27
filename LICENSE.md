@@ -1,13 +1,12 @@
 # Trimtab Beta — Proprietary License Notice
 
-Copyright © 2026 Inference Flow AI Studio. All rights reserved.
+Copyright © 2026 [copyright owner’s legal name].
+All rights reserved.
 
-Trimtab binaries and installer scripts are proprietary and are made available solely for beta evaluation under the [Beta Terms](BETA_TERMS.md).
+Trimtab binaries and installer scripts are proprietary software, licensed—not sold—and are available free of charge during the beta under the [Beta Terms](BETA_TERMS.md).
 
-Subject to your acceptance of and compliance with the Beta Terms, you may download, install, and run the software solely for the beta evaluation purposes permitted by those terms. No other rights are granted except as expressly stated in the Beta Terms or required by applicable law.
+You may download, install, run, and make necessary copies of Trimtab only as permitted by the Beta Terms. Other copying, redistribution, sublicensing, modification, and attempts to extract or reconstruct the source code are prohibited, except as permitted by those Terms or applicable law.
 
-Except as permitted by the Beta Terms or applicable third-party licenses, you may not otherwise copy, redistribute, sublicense, or modify the software. You may not reverse engineer, decompile, or disassemble it, except to the extent applicable law prohibits restricting those activities.
+Trimtab is provided “AS IS” and “AS AVAILABLE,” subject to the warranty disclaimers and limitations of liability in the Beta Terms.
 
-The software is provided “AS IS” and “AS AVAILABLE,” subject to the warranty disclaimers and limitations of liability in the Beta Terms and to applicable law.
-
-The Trimtab application source code is not published in this repository. Third-party components, if any, remain subject to their respective licenses.
+The Trimtab application source code is not provided. Third-party components remain subject to their respective licenses.
