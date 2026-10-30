@@ -1,8 +1,6 @@
 # Trimtab Beta Terms
 
-Version 0.2
-
-Trimtab is provided under the name Inference Flow AI Studio. In these Terms, “we,” “us,” and “Provider” refer to the individual or legal entity operating Trimtab under that name.
+Version 0.1 · © 2026 Inference Flow AI Studio
 
 By clicking “I agree,” you accept these Terms. If you do not agree, do not install or use Trimtab.
 

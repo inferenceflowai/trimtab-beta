@@ -3,7 +3,7 @@
 **Small adjustments. Big runs.** Trimtab tests your training project on your Mac with a few smart trials, then hands you one
 command for the full GPU run.
 
-> **Beta.** Free to use during the beta, rough in places. This repository holds the installer and release binaries only —
+> **Beta.** Free to use during the beta. This repository holds the installer and release binaries only —
 > there is no source code here.
 
 ## Install
@@ -28,6 +28,6 @@ the exact list on first start ("What's sent to the AI").
 Use **Feedback** inside the app (left rail). You see the exact text before it is sent.
 
 ## Terms
-By using the beta you agree to the [beta terms](BETA_TERMS.md) (DRAFT). See also [LICENSE.md](LICENSE.md).
+By using the beta you agree to the [beta terms](BETA_TERMS.md). See also [LICENSE.md](LICENSE.md).
 
 © 2026 Inference Flow AI Studio
