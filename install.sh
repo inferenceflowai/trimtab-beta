@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Trimtab beta installer.   curl -fsSL https://raw.githubusercontent.com/rayzhao27/trimtab-beta/main/install.sh | bash
+# Trimtab beta installer.   curl -fsSL https://raw.githubusercontent.com/inferenceflowai/trimtab-beta/main/install.sh | bash
 #
 # Apple Silicon Mac. Installs `uv` if needed, lets uv fetch its OWN Python 3.11 (your conda / venv / system Python
 # are never used or touched), creates an isolated environment at ~/.trimtab/app, installs the wheel from the GitHub
@@ -12,7 +12,7 @@
 #      TRIMTAB_REPO=owner/repo    override the release repo
 set -euo pipefail
 
-GITHUB_REPO="${TRIMTAB_REPO:-rayzhao27/trimtab-beta}"      # <- the one place to change the GitHub owner / repo
+GITHUB_REPO="${TRIMTAB_REPO:-inferenceflowai/trimtab-beta}"      # <- the one place to change the GitHub owner / repo
 PYTHON_MINOR="3.11"
 PY_TAG="cp311"
 APP_HOME="$HOME/.trimtab"
@@ -129,21 +129,20 @@ step "Installing into $APP"
 # 7. the command
 ln -sfn "$APP/bin/trimtab" "$BIN/trimtab"
 
-# 8. PATH: only if ~/.local/bin isn't on it yet; one marked block, added once
+# 8. PATH: make sure new terminals find `trimtab`, even if the current shell already has ~/.local/bin on PATH
+#    (an IDE terminal or a one-off export can hide a missing line in the shell's startup file)
 PATH_NOTE=""
+case "$(basename "${SHELL:-/bin/zsh}")" in
+  zsh) RC="${ZDOTDIR:-$HOME}/.zshrc" ;;
+  bash) RC="$HOME/.bash_profile" ;;
+  *) RC="$HOME/.profile" ;;
+esac
+if ! grep -qF "$RC_BEGIN" "$RC" 2>/dev/null && ! grep -qE '(\$HOME|~|'"$HOME"')/\.local/bin' "$RC" 2>/dev/null; then
+  { printf '\n%s\n' "$RC_BEGIN"; printf 'export PATH="$HOME/.local/bin:$PATH"\n'; printf '%s\n' "$RC_END"; } >> "$RC"
+fi
 case ":$PATH:" in
   *":$BIN:"*) ;;
-  *)
-    case "$(basename "${SHELL:-/bin/zsh}")" in
-      zsh) RC="${ZDOTDIR:-$HOME}/.zshrc" ;;
-      bash) RC="$HOME/.bash_profile" ;;
-      *) RC="$HOME/.profile" ;;
-    esac
-    if ! grep -qF "$RC_BEGIN" "$RC" 2>/dev/null; then
-      { printf '\n%s\n' "$RC_BEGIN"; printf 'export PATH="$HOME/.local/bin:$PATH"\n'; printf '%s\n' "$RC_END"; } >> "$RC"
-    fi
-    PATH_NOTE="Open a new terminal window first (or run: source $RC)."
-    ;;
+  *) PATH_NOTE="Open a new terminal window first (or run: source $RC)." ;;
 esac
 
 # 9. what uninstall needs to know
