@@ -3,13 +3,15 @@
 **Small adjustments. Big runs.** Trimtab tests your training project on your Mac with a few smart trials, then hands you one
 command for the full GPU run.
 
-> **Beta.** Free to use during the beta. This repository holds the installer and release binaries only —
+[Website & Demo](https://inferenceflowai.com/products/trimtab/) · [Get Started](https://inferenceflowai.com/products/trimtab/get-started/)
+
+> **Beta.** Free to use during the beta. This repository holds the installer and release binaries only;
 > there is no source code here.
 
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rayzhao27/trimtab-beta/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/inferenceflowai/trimtab-beta/main/install.sh | bash
 trimtab
 ```
 
